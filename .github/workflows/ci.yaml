@@ -1,0 +1,26 @@
+name: Code quality
+on:
+  pull_request:
+    branches:
+      - develop
+  push:
+    branches:
+      - develop
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  Code-Quality:
+    name: Code quality
+    runs-on: ubuntu-latest
+    container: node:lts-slim
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependency
+        run: yarn install --frozen-lockfile
+      - name: Check lint and format
+        run: |
+          yarn format:check
+          yarn lint:check
