@@ -24,3 +24,5 @@ jobs:
         run: |
           yarn format:check
           yarn lint:check
+      - name: checking unit test
+        run: yarn test
