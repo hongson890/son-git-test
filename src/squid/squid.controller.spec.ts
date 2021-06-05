@@ -10,7 +10,7 @@ import {
 import { SquidSchema } from './model/squid.schema';
 
 // May require additional time for downloading MongoDB binaries
-// jasmine.DEFAULT_TIMEOUT_INTERVAL = 600000;
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 600000;
 
 describe('SquidController', () => {
   let controller: SquidController;
