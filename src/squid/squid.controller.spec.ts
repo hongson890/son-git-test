@@ -10,12 +10,14 @@ import {
 import { SquidSchema } from './model/squid.schema';
 
 // May require additional time for downloading MongoDB binaries
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 600000;
+// jasmine.DEFAULT_TIMEOUT_INTERVAL = 600000;
 
 describe('SquidController', () => {
   let controller: SquidController;
 
   beforeEach(async () => {
+    console.log('before each');
+    jest.setTimeout(30 * 1000);
     const module: TestingModule = await Test.createTestingModule({
       imports: [
         rootMongooseTestModule(),
