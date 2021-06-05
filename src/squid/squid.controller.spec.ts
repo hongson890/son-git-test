@@ -17,7 +17,6 @@ describe('SquidController', () => {
 
   beforeEach(async () => {
     console.log('before each');
-    jest.setTimeout(30 * 1000);
     const module: TestingModule = await Test.createTestingModule({
       imports: [
         rootMongooseTestModule(),
