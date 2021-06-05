@@ -12,4 +12,3 @@ export class Squid extends Document {
 }
 
 export const SquidSchema = SchemaFactory.createForClass(Squid);
-

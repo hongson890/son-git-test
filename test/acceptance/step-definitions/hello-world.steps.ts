@@ -1,4 +1,4 @@
-import { binding, then, when, before} from 'cucumber-tsflow';
+import { binding, then, when, before } from 'cucumber-tsflow';
 import { assert } from 'chai';
 import { Test, TestingModule } from '@nestjs/testing';
 import * as request from 'supertest';
@@ -26,8 +26,9 @@ export class HelloWorldSteps {
 
   @when(/Call to "([^"]*)"/)
   public async callToAPI(url: string) {
-    this.context.response = await request(this.context.app.getHttpServer())
-      .get(url);
+    this.context.response = await request(this.context.app.getHttpServer()).get(
+      url,
+    );
   }
 
   @then(/the response status code should be "([^"]*)"/)

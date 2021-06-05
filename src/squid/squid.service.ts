@@ -3,20 +3,15 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Squid } from './model/squid.schema';
 
-
 @Injectable()
 export class SquidService {
-  constructor(
-    @InjectModel('Squid') private squidModel: Model<Squid>,
-  ) {
-    this.fixtures()
-      .then(() => Logger.log('fixtures OK', 'SquidService'));
+  constructor(@InjectModel('Squid') private squidModel: Model<Squid>) {
+    this.fixtures().then(() => Logger.log('fixtures OK', 'SquidService'));
   }
 
   async createSquid(url: string): Promise<Squid> {
     return this.squidModel.create({ url });
   }
-
 
   async getSquid(): Promise<Squid> {
     const count = await this.squidModel.countDocuments().exec();

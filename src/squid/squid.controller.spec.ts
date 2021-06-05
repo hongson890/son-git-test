@@ -3,7 +3,10 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 import { SquidController } from './squid.controller';
 import { SquidService } from './squid.service';
-import { closeInMongodConnection, rootMongooseTestModule } from '../test-utils/mongo/MongooseTestModule';
+import {
+  closeInMongodConnection,
+  rootMongooseTestModule,
+} from '../test-utils/mongo/MongooseTestModule';
 import { SquidSchema } from './model/squid.schema';
 
 describe('SquidController', () => {

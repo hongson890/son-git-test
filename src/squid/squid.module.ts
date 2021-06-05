@@ -7,11 +7,9 @@ import { SquidSchema } from './model/squid.schema';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([
-      { name: 'Squid', schema: SquidSchema },
-    ])
+    MongooseModule.forFeature([{ name: 'Squid', schema: SquidSchema }]),
   ],
   providers: [SquidService],
-  controllers: [SquidController]
+  controllers: [SquidController],
 })
 export class SquidModule {}
