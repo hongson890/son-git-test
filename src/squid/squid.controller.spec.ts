@@ -9,7 +9,8 @@ import {
 } from '../test-utils/mongo/MongooseTestModule';
 import { SquidSchema } from './model/squid.schema';
 
-jest.setTimeout(600000);
+// May require additional time for downloading MongoDB binaries
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 600000;
 
 describe('SquidController', () => {
   let controller: SquidController;
