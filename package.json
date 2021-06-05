@@ -79,6 +79,8 @@
     "testEnvironment": "node"
   },
   "config": {
-    "debug": "1"
+    "mongodbMemoryServer": {
+      "debug": "1"
+    }
   }
 }
