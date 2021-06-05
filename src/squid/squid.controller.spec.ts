@@ -9,6 +9,8 @@ import {
 } from '../test-utils/mongo/MongooseTestModule';
 import { SquidSchema } from './model/squid.schema';
 
+jest.setTimeout(600000);
+
 describe('SquidController', () => {
   let controller: SquidController;
 
