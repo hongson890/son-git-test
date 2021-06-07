@@ -7,11 +7,12 @@ import {
   rootMongooseTestModule,
 } from '../test-utils/mongo/MongooseTestModule';
 import { SquidSchema } from './model/squid.schema';
+import * as mongoose from 'mongoose';
 
 describe('SquidService', () => {
   let service: SquidService;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [
         rootMongooseTestModule(),
@@ -27,7 +28,9 @@ describe('SquidService', () => {
     expect(service).toBeDefined();
   });
 
-  afterAll(async () => {
-    await closeInMongodConnection();
+  afterAll(async (done) => {
+    await closeInMongodConnection(done);
+    mongoose.disconnect();
+    mongoose.connection.close();
   });
 });

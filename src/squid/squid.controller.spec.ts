@@ -8,6 +8,7 @@ import {
   rootMongooseTestModule,
 } from '../test-utils/mongo/MongooseTestModule';
 import { SquidSchema } from './model/squid.schema';
+import * as mongoose from 'mongoose';
 
 // May require additional time for downloading MongoDB binaries
 // jasmine.DEFAULT_TIMEOUT_INTERVAL = 600000;
@@ -34,7 +35,9 @@ describe('SquidController', () => {
     expect(controller).toBeDefined();
   });
 
-  afterAll(async () => {
-    await closeInMongodConnection();
+  afterAll(async (done) => {
+    await closeInMongodConnection(done);
+    mongoose.disconnect();
+    mongoose.connection.close();
   });
 });
