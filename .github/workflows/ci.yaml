@@ -15,7 +15,7 @@ jobs:
   Code-Quality:
     name: Code quality
     runs-on: ubuntu-latest
-    container: node:lts-slim
+    container: node:14.17.0
     steps:
       - uses: actions/checkout@v2
       - name: Install dependency
