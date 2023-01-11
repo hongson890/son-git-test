@@ -9,4 +9,8 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  testFuc1() {
+    console.log('test fuc1');
+  }
 }
