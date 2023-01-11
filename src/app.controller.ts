@@ -17,4 +17,12 @@ export class AppController {
   testFuc2() {
     console.log('test fuc2');
   }
+
+  testFunc5() {
+    console.log('test func5');
+  }
+
+  testFuc6() {
+    console.log('test6');
+  }
 }
